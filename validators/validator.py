@@ -1,5 +1,10 @@
 import re
 
+NOT_CLOSED_TAG_REGEX = (r'(^[\*_`]+\w+[^_\*`]+$)|([\*]+[\w]+[`_]+$)'
+                        r'|([_]+\w+[\*`]+$)|([`]+\w+[\*_]+$)')
+COMBINATION_TAG_REGEX = (r'(([\*]+[_`]+[\w\u0410-\u044F `\*]+[_`]*[\*]*)|([_]+[\*`]+'
+                         r'[\w\u0410-\u044F `\*]+[\*`]*[_]*)|([`]+[\*_]+[\w\u0410-\u044F `\*]+[\*_]*[`]*))')
+
 
 class Validator:
 
@@ -13,14 +18,12 @@ class Validator:
                 yield line
 
     def validate_not_closed_tag(self, line):
-        if re.match(r'(^[\*_`]+\w+[^_\*`]+$)|([\*]+[\w]+[`_]+$)|([_]+\w+[\*`]+$)|([`]+\w+[\*_]+$)', line):
+        if re.match(NOT_CLOSED_TAG_REGEX, line):
             raise ValueError("You forgot to close the tag")
         return line
 
     def validate_tag_combination(self, line):
-        if re.match(
-            r'(([\*]+[_`]+[\w\u0410-\u044F `\*]+[_`]*[\*]*)|([_]+[\*`]+[\w\u0410-\u044F `\*]+[\*`]*[_]*)|([`]+[\*_]+[\w\u0410-\u044F `\*]+[\*_]*[`]*))',
-                line):
+        if re.match(COMBINATION_TAG_REGEX, line):
             raise ValueError("The sequence of special characters is incorrect")
         return line
 
