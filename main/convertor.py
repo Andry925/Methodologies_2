@@ -1,6 +1,13 @@
 import re
 from validators.validator import Validator
 
+REPLACEMENT_ARRAY = [
+    ('\\*\\*(.*?)\\*\\*', '<b>\\1</b>'),
+    ('```(.*?)```', '<pre>\\1</pre>'),
+    ('`(.*?)`', '<code>\\1</code>'),
+    ('_(.*?)_', '<i>\\1</i>')
+]
+
 
 class HtmlConvertor:
 
@@ -20,10 +27,9 @@ class HtmlConvertor:
             file.write(html_line)
 
     def convert_to_html(self, md_string):
-        md_string = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', md_string)
-        md_string = re.sub(r'```(.*?)```', r'<pre>\1</pre>', md_string)
-        md_string = re.sub(r'`(.*?)`', r'<tt>\1</tt>', md_string)
-        md_string = re.sub(r'_(.*?)_', r'<i>\1</i>', md_string)
+        for regex, replacement in REPLACEMENT_ARRAY:
+            md_string = re.sub(regex, replacement, md_string)
+
         return md_string
 
     def convert_paragraphs(self, lines):
@@ -47,4 +53,6 @@ class HtmlConvertor:
 
 
 if __name__ == '__main__':
-    converter = HtmlConvertor("test.md", "some.html")
+    converter = HtmlConvertor(
+        "/home/andrew/PycharmProjects/labaratory1/markdown_files/test.md",
+        "/home/andrew/PycharmProjects/labaratory1/markdown_files/some.html")
