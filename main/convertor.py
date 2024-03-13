@@ -50,7 +50,6 @@ class HtmlConvertor:
             line) for line in self.read_md_file(md_file)]
         for html in self.convert_paragraphs(processed_lines):
             self.write_to_html_file(self.html_file, html)
-            print(html)
 
 
 if __name__ == '__main__':
