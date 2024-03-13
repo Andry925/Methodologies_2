@@ -4,7 +4,7 @@ from validators.validator import Validator
 REPLACEMENT_ARRAY = [
     ('\\*\\*(.*?)\\*\\*', '<b>\\1</b>'),
     ('```(.*?)```', '<pre>\\1</pre>'),
-    ('`(.*?)`', '<code>\\1</code>'),
+    ('`(.*?)`', '<tt>\\1</tt>'),
     ('_(.*?)_', '<i>\\1</i>')
 ]
 
@@ -24,7 +24,7 @@ class HtmlConvertor:
 
     def write_to_html_file(self, html_file, html_line):
         with open(html_file, 'a', encoding='utf-8') as file:
-            file.write(html_line)
+            file.write(html_line + '\n')
 
     def convert_to_html(self, md_string):
         for regex, replacement in REPLACEMENT_ARRAY:
@@ -54,5 +54,5 @@ class HtmlConvertor:
 
 if __name__ == '__main__':
     converter = HtmlConvertor(
-        "/home/andrew/PycharmProjects/labaratory1/markdown_files/test.md",
+        "/home/andrew/PycharmProjects/labaratory1/markdown_files/errors_inside_common.md",
         "/home/andrew/PycharmProjects/labaratory1/markdown_files/some.html")
