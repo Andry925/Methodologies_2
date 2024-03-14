@@ -15,11 +15,11 @@ As an enhancement to main functionality, my program also converts some valid nes
 2. After that, you have to clone this repository and enter the working folder :
 ```bash
 $ git clone https://github.com/Andry925/Methodologies1.git
-$ cd Methodologies1
+$ cd Methodologies1/
 ```
 3. In order to start go to the main folder and find convertor.py :
 ```bash
-$ cd main
+$ cd main/
 ```
 
 # Usage 
