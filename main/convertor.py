@@ -50,9 +50,10 @@ class HtmlConvertor:
             line) for line in self.read_md_file(md_file)]
         for html in self.convert_paragraphs(processed_lines):
             self.write_to_html_file(self.html_file, html)
+            print(html)
 
 
 if __name__ == '__main__':
     converter = HtmlConvertor(
-        "/home/andrew/PycharmProjects/labaratory1/markdown_files/errors_inside_common.md",
+        "/home/andrew/PycharmProjects/labaratory1/markdown_files/common_tags.md",
         "/home/andrew/PycharmProjects/labaratory1/markdown_files/some.html")
