@@ -26,7 +26,7 @@ $ cd main
 I also decided to add the markdown_files package, which holds some Markdown files with examples to show how my program 
 handles different types of tags and catches errors.
 1. The application outputs the generated HTML markup to the standard output and to the HTML file you need to specify.
-![Screenshot from 2024-03-14 13-39-23.png](..%2F..%2FPictures%2FScreenshots%2FScreenshot%20from%202024-03-14%2013-39-23.png)
+![Screenshot from 2024-03-14 13-39-23](https://github.com/Andry925/Methodologies1/assets/114020399/e94ca478-0c38-497c-88ef-ca55d97b8707)
 
 2. Go to the convertor.py and find this construction. Here, inside HtmlConvertor class, give the **full path** to the 
 markdown file you want to convert. For the second argument give the **full path** to an existing html file(if file does
