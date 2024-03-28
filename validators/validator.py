@@ -12,6 +12,7 @@ class Validator:
         self.file_path = file_path
         self.run_validation(file_path)
 
+
     def read_markdown_file(self, md_file):
         with open(md_file, 'r') as file:
             for line in file:
@@ -33,5 +34,4 @@ class Validator:
             self.validate_tag_combination(line)
 
 
-if __name__ == '__main__':
-    validator = Validator('test.md')
+
