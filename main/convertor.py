@@ -1,4 +1,5 @@
 import re
+import argparse
 from validators.validator import Validator
 
 REPLACEMENT_ARRAY = [
@@ -45,15 +46,23 @@ class HtmlConvertor:
         if paragraph:
             yield f"{paragraph.strip()}"
 
+    @staticmethod
+    def parse_command_line_args():
+        parser = argparse.ArgumentParser(description='Parse command line')
+        parser.add_argument('input_filepath', default=None)
+        parser.add_argument('--out', default=None)
+        args = parser.parse_args()
+        return args
+
     def run_converter(self, md_file):
         processed_lines = [self.convert_to_html(
             line) for line in self.read_md_file(md_file)]
         for html in self.convert_paragraphs(processed_lines):
-            self.write_to_html_file(self.html_file, html)
+            if self.html_file:
+                self.write_to_html_file(self.html_file, html)
             print(html)
 
 
-if __name__ == '__main__':
-    converter = HtmlConvertor(
-        "/home/andrew/PycharmProjects/labaratory1/markdown_files/common_tags.md",
-        "/home/andrew/PycharmProjects/labaratory1/markdown_files/some.html")
+HtmlConvertor(
+    HtmlConvertor.parse_command_line_args().input_filepath,
+    HtmlConvertor.parse_command_line_args().out)
