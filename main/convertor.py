@@ -63,6 +63,7 @@ class HtmlConvertor:
             print(html)
 
 
-HtmlConvertor(
-    HtmlConvertor.parse_command_line_args().input_filepath,
-    HtmlConvertor.parse_command_line_args().out)
+if __name__ == "__main__":
+    HtmlConvertor(
+        HtmlConvertor.parse_command_line_args().input_filepath,
+        HtmlConvertor.parse_command_line_args().out)
