@@ -1,5 +1,4 @@
-**test** ```Preformatted text **He He**```
+**test**
 **correct**
-**правильно**
+`правильно`
 _italic_ `monospaced` ```Привіт```
-
