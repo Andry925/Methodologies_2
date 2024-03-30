@@ -1,7 +1,7 @@
 import unittest
 from validators.validator import Validator
 
-PATH_TO_MARKDOWN_FILES = "/home/andrew/PycharmProjects/software_architecture/implementation/Methodologies_2/markdown_files/"
+PATH_TO_MARKDOWN_FILES = "markdown_files/"
 
 
 class TestValidator(unittest.TestCase):

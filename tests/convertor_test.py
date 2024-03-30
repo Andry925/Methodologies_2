@@ -3,8 +3,7 @@ from unittest.mock import patch, call, mock_open
 from main.convertor import HtmlConvertor
 
 PATH_TO_MARKDOWN_FILES = (
-    "/home/andrew/PycharmProjects/software_architecture/implementation/Methodologies_2"
-    "/markdown_files/")
+    "markdown_files/")
 
 HTML_OUTPUT_PATH = "something.html"
 
