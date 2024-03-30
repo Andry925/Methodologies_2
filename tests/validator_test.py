@@ -33,3 +33,6 @@ class TestValidator(unittest.TestCase):
 
     def tearDown(self):
         del self.validator
+
+
+unittest.main()

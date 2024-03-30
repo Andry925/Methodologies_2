@@ -63,7 +63,7 @@ class TestHtmlConvertor(unittest.TestCase):
         with patch.object(HtmlConvertor, 'read_md_file', return_value=[file_content]):
             HtmlConvertor(f'{PATH_TO_MARKDOWN_FILES}bold.md', HTML_OUTPUT_PATH)
         mock_file.assert_called_with(HTML_OUTPUT_PATH, 'a', encoding='utf-8')
-        mock_file().write.assert_called_with(expected_html_content)
+        mock_file().write.assert_called_with(expected_html_content + '\n')
 
     def test_not_closed_tags(self):
         with self.assertRaises(ValueError) as e:
@@ -82,3 +82,6 @@ class TestHtmlConvertor(unittest.TestCase):
 
     def tearDown(self):
         del self.html_convertor
+
+
+unittest.main()
