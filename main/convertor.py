@@ -46,6 +46,21 @@ class HtmlConvertor:
         if paragraph:
             yield f"{paragraph.strip()}"
 
+    def convert_preformatted_text(self, lines):
+        in_block = False
+        preformatted_block = ""
+        for line in lines:
+            if line.strip() == "```":
+                in_block = not in_block
+                if not in_block:
+                    yield f"<pre>{preformatted_block.strip()}</pre>"
+                    preformatted_block = ""
+                continue
+            if in_block:
+                preformatted_block += line
+            else:
+                yield line
+
     @staticmethod
     def parse_command_line_args():
         parser = argparse.ArgumentParser(description='Parse command line')
@@ -55,8 +70,10 @@ class HtmlConvertor:
         return args
 
     def run_converter(self, md_file):
+        lines = self.read_md_file(md_file)
+        preformatted_converted_lines = self.convert_preformatted_text(lines)
         processed_lines = [self.convert_to_html(
-            line) for line in self.read_md_file(md_file)]
+            line) for line in preformatted_converted_lines]
         for html in self.convert_paragraphs(processed_lines):
             if self.html_file:
                 self.write_to_html_file(self.html_file, html)
