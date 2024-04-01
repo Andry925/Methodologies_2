@@ -12,7 +12,8 @@ MARKDOWN_COMBINATIONS = (
     "<p>Paragraph1. Lorem Ipsum Dolor Sit Amet. \nThis is still paragraph 1.</p>",
     "<p>And after a blank line this is paragraph 2.</p>",
     "<b>Additional text</b> \n<tt>monospace</tt> \n<i>також працює</i>",
-    "<b>test</b> \n<b>correct</b> \n<tt>правильно</tt> \n<i>italic</i> <tt>monospaced</tt> <pre>Привіт</pre>"
+    "<b>test</b> \n<b>correct</b> \n<tt>правильно</tt> \n<i>italic</i> <tt>monospaced</tt> <pre>Привіт</pre>",
+    "<pre>This is a pre tag</pre>",
 )
 
 
@@ -54,6 +55,14 @@ class TestHtmlConvertor(unittest.TestCase):
 
         ]
         mock_print.assert_has_calls(calls)
+
+    @patch("builtins.print")
+    def test_pre_tags_are_printed(self, mock_print):
+        self.html_convertor(f'{PATH_TO_MARKDOWN_FILES}pre_tag.md')
+        mock_print.assert_called_with(MARKDOWN_COMBINATIONS[5])
+
+
+
 
     @patch("builtins.open", new_callable=mock_open)
     def test_can_write_to_file(self, mock_file):
