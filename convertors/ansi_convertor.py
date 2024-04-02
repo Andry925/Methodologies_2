@@ -56,4 +56,5 @@ class AnsiConvertor:
             if self.ansi_file:
                 self.write_to_html_file(self.ansi_file, processed_line)
 
-            print(processed_line.strip())
+            else:
+                print(processed_line.strip())

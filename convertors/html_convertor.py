@@ -69,5 +69,5 @@ class HtmlConvertor:
         for html in self.convert_paragraphs(processed_lines):
             if self.html_file:
                 self.write_to_html_file(self.html_file, html)
-            print(html)
-
+            else:
+                print(html)
