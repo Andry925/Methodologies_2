@@ -3,7 +3,7 @@ from validators.validator import Validator
 
 REPLACEMENT_ARRAY = [
     ('\\*\\*(.*?)\\*\\*', '\x1b[1m\\1\x1b[22m'),
-    ('```(.*?)```', '<pre>\\1</pre>'),
+    ('```(.*?)```', '\x1b[7m\\1\x1b[27m'),
     ('`(.*?)`', '\x1b[7m\\1\x1b[27m'),
     ('_(.*?)_', '\x1b[3m\\1\x1b[23m')
 
@@ -56,10 +56,10 @@ class AnsiConvertor:
             if self.ansi_file:
                 self.write_to_html_file(self.ansi_file, processed_line)
 
-            print(processed_line)
+            print(processed_line.strip())
 
 
 if __name__ == '__main__':
     ansi_convertor = AnsiConvertor(
-        "/home/andrew/PycharmProjects/Methodologies_2/markdown_files/bold.md",
+        "/home/andrew/PycharmProjects/Methodologies_2/markdown_files/common_tags.md",
         "some.txt")
