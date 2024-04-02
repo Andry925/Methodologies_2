@@ -24,8 +24,7 @@ $ cd Methodologies_2/
 I also decided to add the markdown_files package, which holds some Markdown files with examples to show how my program 
 handles different types of tags and catches errors.
 
-1. My application has some properties in usage that you must be aware of (Here is the case when you want to print genera
-ted ansi from the markdown file.
+1. My application has some properties in usage that you must be aware of (Here is the case when you want to print generated ansi from the markdown file).
 ![Screenshot from 2024-04-02 20-54-40](https://github.com/Andry925/Methodologies_2/assets/114020399/7b583ada-40e7-414e-8529-e81bf2f7b64f)
 
 
@@ -46,13 +45,14 @@ ted ansi from the markdown file.
 # Links
 
 [Here you will find revert commit](https://github.com/Andry925/Methodologies1/commit/3b6a3e5ba5f09c37cfcc954f8a60d81ae7183de3)
+
 [Here you will find commit with failed tests](https://github.com/Andry925/Methodologies_2/commit/34288563ef6e3b0d1a4ebf5b6e91f8ecbefc445f)
 
 
 # Conclusions
-Особисто я не маю дуже великого досвіду із тестування, лише писав невеличкі юніт-тести для "ендпоінтів" для власного  
-проекту на "Django", завдяки яким мені декілька разів вдалося побачити помилки в своєму коді. Хоча в цій лабараторній роботі
-юніт-тести не відкрили для мене якогось серйозного "бага", але я з впевненістю можу сказати, що вони мені значно допомогли 
-переробити архітектуру мого проекту, при цьому нічого не "зламати".
-В підсумку можу сказати, що після цієї лабараторної роботи я зрозумів, що мені варто підтягнути знання із 
-тестування.
+   Особисто я не маю дуже великого досвіду із тестування, лише писав невеличкі юніт-тести для "ендпоінтів" для власного  
+   проекту на "Django", завдяки яким мені декілька разів вдалося побачити помилки в своєму коді. Хоча в цій лабараторній роботі
+   юніт-тести не відкрили для мене якогось серйозного "бага", але я з впевненістю можу сказати, що вони мені значно допомогли 
+   переробити архітектуру мого проекту, при цьому нічого не "зламати".
+   В підсумку можу сказати, що після цієї лабараторної роботи я зрозумів, що мені варто підтягнути знання із 
+   тестування.
