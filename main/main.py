@@ -37,4 +37,3 @@ if __name__ == '__main__':
         ParseCommand.parse_command_line_args().format,
         ParseCommand.parse_command_line_args().out
     )
-print(ParseCommand.parse_command_line_args().out)
