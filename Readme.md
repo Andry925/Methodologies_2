@@ -48,6 +48,10 @@ handles different types of tags and catches errors.
 
 [Here you will find commit with failed tests](https://github.com/Andry925/Methodologies_2/commit/34288563ef6e3b0d1a4ebf5b6e91f8ecbefc445f)
 
+# Tests
+Run tests by typing following command
+![Screenshot from 2024-04-02 21-41-13](https://github.com/Andry925/Methodologies_2/assets/114020399/32fbe778-bf36-4717-875a-6744e9d333c7)
+
 
 # Conclusions
    Особисто я не маю дуже великого досвіду із тестування, лише писав невеличкі юніт-тести для "ендпоінтів" для власного  
