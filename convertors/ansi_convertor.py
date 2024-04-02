@@ -57,9 +57,3 @@ class AnsiConvertor:
                 self.write_to_html_file(self.ansi_file, processed_line)
 
             print(processed_line.strip())
-
-
-if __name__ == '__main__':
-    ansi_convertor = AnsiConvertor(
-        "/home/andrew/PycharmProjects/Methodologies_2/markdown_files/common_tags.md",
-        "some.txt")

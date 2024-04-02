@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, call, mock_open
-from main.convertor import HtmlConvertor
+from convertors.html_convertor import HtmlConvertor
 
 PATH_TO_MARKDOWN_FILES = (
     "markdown_files/")

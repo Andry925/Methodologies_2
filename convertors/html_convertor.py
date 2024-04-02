@@ -61,14 +61,6 @@ class HtmlConvertor:
             else:
                 yield line
 
-    @staticmethod
-    def parse_command_line_args():
-        parser = argparse.ArgumentParser(description='Parse command line')
-        parser.add_argument('input_filepath', default=None)
-        parser.add_argument('--out', default=None)
-        args = parser.parse_args()
-        return args
-
     def run_converter(self, md_file):
         lines = self.read_md_file(md_file)
         preformatted_converted_lines = self.convert_preformatted_text(lines)
@@ -79,8 +71,3 @@ class HtmlConvertor:
                 self.write_to_html_file(self.html_file, html)
             print(html)
 
-
-if __name__ == "__main__":
-    HtmlConvertor(
-        HtmlConvertor.parse_command_line_args().input_filepath,
-        HtmlConvertor.parse_command_line_args().out)

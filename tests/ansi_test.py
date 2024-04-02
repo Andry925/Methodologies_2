@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, call, mock_open
-from main.ansi_convertor import AnsiConvertor
+from convertors.ansi_convertor import AnsiConvertor
 
 PATH_TO_MARKDOWN_FILES = 'markdown_files/'
 OUTPUT_FILE = "something.html"
